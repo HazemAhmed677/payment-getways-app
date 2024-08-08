@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:payment_getways_app/features/checkout/presentation/views/my_cart_view/widgets/custom_column_body.dart';
+import 'package:payment_getways_app/features/checkout/presentation/views/widgets/custom_column_body.dart';
 
 class MyCartViewBody extends StatelessWidget {
   const MyCartViewBody({super.key});

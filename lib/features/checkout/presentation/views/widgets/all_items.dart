@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:payment_getways_app/features/checkout/presentation/views/my_cart_view/widgets/item.dart';
+import 'package:payment_getways_app/features/checkout/presentation/views/widgets/item.dart';
 
 class AllItems extends StatelessWidget {
   const AllItems({super.key});
