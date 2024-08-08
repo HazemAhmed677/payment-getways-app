@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppStyles {
+abstract class AppStyles {
   static TextStyle regular18 = const TextStyle(
     fontSize: 18,
   );
