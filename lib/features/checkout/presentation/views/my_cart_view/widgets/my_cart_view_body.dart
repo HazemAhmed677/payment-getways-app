@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:payment_getways_app/features/checkout/presentation/views/my_cart_view/widgets/custom_scroll_view_widget.dart';
+import 'package:payment_getways_app/features/checkout/presentation/views/my_cart_view/widgets/custom_column_body.dart';
 
 class MyCartViewBody extends StatelessWidget {
   const MyCartViewBody({super.key});
@@ -11,10 +11,8 @@ class MyCartViewBody extends StatelessWidget {
         padding: EdgeInsets.only(
           left: 20.0,
           right: 20,
-          top: 25,
-          bottom: 12,
         ),
-        child: CustomScrollViewWidget(),
+        child: CustomColumnBody(),
       ),
     );
   }
