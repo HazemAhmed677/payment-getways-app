@@ -6,13 +6,18 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 AppBar buildAppBar({
   required String text,
+  Function()? onTap,
 }) {
   return AppBar(
     elevation: 0,
     backgroundColor: Colors.transparent,
-    leading: Center(
-      child: SvgPicture.asset(
-        Assets.imagesBack,
+    leading: InkWell(
+      borderRadius: BorderRadius.circular(12),
+      onTap: onTap,
+      child: Center(
+        child: SvgPicture.asset(
+          Assets.imagesBack,
+        ),
       ),
     ),
     title: Text(

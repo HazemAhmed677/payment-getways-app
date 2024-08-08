@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:payment_getways_app/core/utils/app_styles.dart';
+import 'package:payment_getways_app/features/checkout/presentation/views/payment_details_view.dart';
 
 class CustomPayButton extends StatelessWidget {
   const CustomPayButton({super.key});
@@ -18,7 +19,11 @@ class CustomPayButton extends StatelessWidget {
           ),
           backgroundColor: const Color(0xff34A853),
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const PaymentDetailsView()),
+          );
+        },
         child: Padding(
           padding: const EdgeInsets.symmetric(
             vertical: 23.0,
