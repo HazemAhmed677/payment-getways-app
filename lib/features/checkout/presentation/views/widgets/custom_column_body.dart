@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:payment_getways_app/core/utils/app_images.dart';
+import 'package:payment_getways_app/features/checkout/presentation/views/payment_details_view.dart';
 import 'package:payment_getways_app/features/checkout/presentation/views/widgets/all_items.dart';
 import 'package:payment_getways_app/features/checkout/presentation/views/widgets/custom_pay_button.dart';
 import 'package:payment_getways_app/features/checkout/presentation/views/widgets/total_price.dart';
@@ -34,12 +35,21 @@ class CustomColumnBody extends StatelessWidget {
           thickness: 2,
         ),
         const TotalPrice(),
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             top: 16,
             bottom: 12,
           ),
-          child: CustomPayButton(),
+          child: CustomPayButton(
+            text: 'Complete Payment',
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const PaymentDetailsView(),
+                ),
+              );
+            },
+          ),
         )
       ],
     );

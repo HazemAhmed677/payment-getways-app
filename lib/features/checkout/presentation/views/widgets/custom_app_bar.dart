@@ -9,14 +9,26 @@ AppBar buildAppBar({
   Function()? onTap,
 }) {
   return AppBar(
-    elevation: 0,
+    scrolledUnderElevation: 0,
     backgroundColor: Colors.transparent,
-    leading: InkWell(
-      borderRadius: BorderRadius.circular(12),
-      onTap: onTap,
-      child: Center(
-        child: SvgPicture.asset(
-          Assets.imagesBack,
+    leading: Padding(
+      padding: const EdgeInsets.only(
+        left: 14,
+      ),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(
+          12,
+        ),
+        onTap: onTap,
+        child: Padding(
+          padding: const EdgeInsets.only(
+            left: 6,
+          ),
+          child: Center(
+            child: SvgPicture.asset(
+              Assets.imagesBack,
+            ),
+          ),
         ),
       ),
     ),
