@@ -5,7 +5,7 @@ import 'package:payment_getways_app/core/utils/app_styles.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 AppBar buildAppBar({
-  required String text,
+  String? text,
   Function()? onTap,
 }) {
   return AppBar(
@@ -32,10 +32,12 @@ AppBar buildAppBar({
         ),
       ),
     ),
-    title: Text(
-      text,
-      style: AppStyles.medium25,
-    ),
+    title: (text != null)
+        ? Text(
+            text,
+            style: AppStyles.medium25,
+          )
+        : const Text(''),
     centerTitle: true,
   );
 }

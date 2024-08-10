@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:payment_getways_app/features/checkout/presentation/views/thank_you_view.dart';
 import 'package:payment_getways_app/features/checkout/presentation/views/widgets/all_payment_methods.dart';
 import 'package:payment_getways_app/features/checkout/presentation/views/widgets/custom_credit_card_with_form.dart';
 import 'package:payment_getways_app/features/checkout/presentation/views/widgets/custom_pay_button.dart';
@@ -56,11 +57,13 @@ class _PaymentDetailsBodyState extends State<PaymentDetailsBody> {
                       if (formKey.currentState!.validate()) {
                         formKey.currentState!.save();
                         autovalidateMode = AutovalidateMode.disabled;
-                        setState(() {});
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const ThankYouView(),
+                        ));
                       } else {
                         autovalidateMode = AutovalidateMode.always;
-                        setState(() {});
                       }
+                      setState(() {});
                     },
                   ),
                 ),
