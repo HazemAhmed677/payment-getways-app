@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:payment_getways_app/core/utils/app_styles.dart';
-import 'package:payment_getways_app/features/checkout/presentation/views/widgets/item.dart';
+import 'package:payment_getways_app/features/checkout/presentation/views/widgets/thank_you_elements.dart';
 
 class ThankViewBody extends StatelessWidget {
   const ThankViewBody({super.key});
@@ -17,31 +16,13 @@ class ThankViewBody extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: const Color(0xffD9D9D9),
+          color: const Color(0xffEDEDED),
         ),
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 66,
-            ),
-            Text(
-              'Thank you!',
-              style: AppStyles.medium25,
-            ),
-            const SizedBox(
-              height: 2,
-            ),
-            Text(
-              'Your transaction was successful',
-              style: AppStyles.regular20,
-            ),
-            const SizedBox(
-              height: 42,
-            ),
-            const SizedBox(
-              height: 58,
-            ),
-          ],
+        child: const Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: 22.0,
+          ),
+          child: ThankYouElements(),
         ),
       ),
     );
