@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 
 class CustomCreditCardWithForm extends StatefulWidget {
-  const CustomCreditCardWithForm({super.key});
-
+  const CustomCreditCardWithForm(
+      {super.key, required this.formKey, required this.autovalidateMode});
+  final GlobalKey<FormState> formKey;
+  final AutovalidateMode autovalidateMode;
   @override
   State<CustomCreditCardWithForm> createState() =>
       _CustomCreditCardWithFormState();
@@ -12,7 +14,7 @@ class CustomCreditCardWithForm extends StatefulWidget {
 class _CustomCreditCardWithFormState extends State<CustomCreditCardWithForm> {
   String cardNumber = '', expiryDate = '', cardHolderName = '', cvvCode = '';
   bool isCvvFocused = false;
-  final GlobalKey<FormState> formKey = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -40,7 +42,8 @@ class _CustomCreditCardWithFormState extends State<CustomCreditCardWithForm> {
             isCvvFocused = creditCardModel.isCvvFocused;
             setState(() {});
           },
-          formKey: formKey,
+          formKey: widget.formKey,
+          autovalidateMode: widget.autovalidateMode,
         ),
       ],
     );

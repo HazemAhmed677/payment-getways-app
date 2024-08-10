@@ -3,9 +3,16 @@ import 'package:payment_getways_app/features/checkout/presentation/views/widgets
 import 'package:payment_getways_app/features/checkout/presentation/views/widgets/custom_credit_card_with_form.dart';
 import 'package:payment_getways_app/features/checkout/presentation/views/widgets/custom_pay_button.dart';
 
-class PaymentDetailsBody extends StatelessWidget {
+class PaymentDetailsBody extends StatefulWidget {
   const PaymentDetailsBody({super.key});
 
+  @override
+  State<PaymentDetailsBody> createState() => _PaymentDetailsBodyState();
+}
+
+class _PaymentDetailsBodyState extends State<PaymentDetailsBody> {
+  final GlobalKey<FormState> formKey = GlobalKey();
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,13 +26,20 @@ class PaymentDetailsBody extends StatelessWidget {
               height: 22,
             ),
           ),
-          const SliverToBoxAdapter(child: AllPaymentsMethods()),
+          const SliverToBoxAdapter(
+            child: AllPaymentsMethods(),
+          ),
           const SliverToBoxAdapter(
             child: SizedBox(
               height: 34,
             ),
           ),
-          const SliverToBoxAdapter(child: CustomCreditCardWithForm()),
+          SliverToBoxAdapter(
+            child: CustomCreditCardWithForm(
+              formKey: formKey,
+              autovalidateMode: autovalidateMode,
+            ),
+          ),
           SliverFillRemaining(
             hasScrollBody: false,
             child: Column(
@@ -38,7 +52,16 @@ class PaymentDetailsBody extends StatelessWidget {
                 Align(
                   child: CustomPayButton(
                     text: 'Pay',
-                    onPressed: () {},
+                    onPressed: () {
+                      if (formKey.currentState!.validate()) {
+                        formKey.currentState!.save();
+                        autovalidateMode = AutovalidateMode.disabled;
+                        setState(() {});
+                      } else {
+                        autovalidateMode = AutovalidateMode.always;
+                        setState(() {});
+                      }
+                    },
                   ),
                 ),
                 const SizedBox(
