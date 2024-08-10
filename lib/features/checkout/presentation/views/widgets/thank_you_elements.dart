@@ -23,12 +23,6 @@ class ThankYouElements extends StatelessWidget {
           height: 24,
         ),
         const TotalPrice(),
-        const SizedBox(
-          height: 30,
-        ),
-        const SizedBox(
-          height: 58,
-        ),
       ],
     );
   }

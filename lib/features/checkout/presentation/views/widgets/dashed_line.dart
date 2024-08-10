@@ -10,7 +10,7 @@ class DashedLine extends StatelessWidget {
         horizontal: 3,
       ),
       child: SizedBox(
-        height: 1,
+        height: 2,
         child: Row(
           children: List.generate(
             22,
@@ -24,7 +24,7 @@ class DashedLine extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: const Color(0xffB8B8B8),
                       borderRadius: BorderRadius.circular(
-                        6,
+                        12,
                       ),
                     ),
                   ),
