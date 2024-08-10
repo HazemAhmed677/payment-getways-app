@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:payment_getways_app/features/checkout/presentation/views/widgets/custom_check_avatar.dart';
 import 'package:payment_getways_app/features/checkout/presentation/views/widgets/thank_you_elements.dart';
 
 class ThankViewBody extends StatelessWidget {
@@ -22,7 +23,18 @@ class ThankViewBody extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             horizontal: 22.0,
           ),
-          child: ThankYouElements(),
+          child: Stack(
+            clipBehavior: Clip.none,
+            children: [
+              Positioned(
+                left: 0,
+                right: 0,
+                top: -40,
+                child: CustomCheckAvatar(),
+              ),
+              ThankYouElements(),
+            ],
+          ),
         ),
       ),
     );
