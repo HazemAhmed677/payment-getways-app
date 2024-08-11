@@ -6,14 +6,12 @@ class MyCartViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-      child: Padding(
-        padding: EdgeInsets.only(
-          left: 20.0,
-          right: 20,
-        ),
-        child: CustomColumnBody(),
+    return const Padding(
+      padding: EdgeInsets.only(
+        left: 20.0,
+        right: 20,
       ),
+      child: CustomColumnBody(),
     );
   }
 }

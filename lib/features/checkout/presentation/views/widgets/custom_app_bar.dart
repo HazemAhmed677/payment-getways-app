@@ -33,9 +33,14 @@ AppBar buildAppBar({
       ),
     ),
     title: (text != null)
-        ? Text(
-            text,
-            style: AppStyles.medium25,
+        ? Padding(
+            padding: const EdgeInsets.only(
+              top: 14.0,
+            ),
+            child: Text(
+              text,
+              style: AppStyles.medium25,
+            ),
           )
         : const Text(''),
     centerTitle: true,

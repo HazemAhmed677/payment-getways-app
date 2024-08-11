@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:payment_getways_app/core/utils/app_images.dart';
-import 'package:payment_getways_app/features/checkout/presentation/views/payment_details_view.dart';
 import 'package:payment_getways_app/features/checkout/presentation/views/widgets/all_items.dart';
+import 'package:payment_getways_app/features/checkout/presentation/views/widgets/all_payment_methods.dart';
 import 'package:payment_getways_app/features/checkout/presentation/views/widgets/custom_pay_button.dart';
 import 'package:payment_getways_app/features/checkout/presentation/views/widgets/total_price.dart';
 
@@ -43,9 +43,35 @@ class CustomColumnBody extends StatelessWidget {
           child: CustomPayButton(
             text: 'Complete Payment',
             onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const PaymentDetailsView(),
+              showModalBottomSheet(
+                shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(16),
+                        topRight: Radius.circular(
+                          16,
+                        ))),
+                context: context,
+                builder: (context) => Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.transparent,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 22.0, vertical: 24),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Padding(
+                          padding: EdgeInsets.only(bottom: 24),
+                          child: AllPaymentsMethods(),
+                        ),
+                        CustomPayButton(
+                          text: 'Confirm Payment',
+                          onPressed: () {},
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               );
             },
