@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:payment_getways_app/core/utils/app_images.dart';
+import 'package:payment_getways_app/features/checkout/presentation/views/thank_you_view.dart';
 import 'package:payment_getways_app/features/checkout/presentation/views/widgets/all_items.dart';
 import 'package:payment_getways_app/features/checkout/presentation/views/widgets/all_payment_methods.dart';
 import 'package:payment_getways_app/features/checkout/presentation/views/widgets/custom_pay_button.dart';
@@ -45,11 +46,13 @@ class CustomColumnBody extends StatelessWidget {
             onPressed: () {
               showModalBottomSheet(
                 shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(16),
-                        topRight: Radius.circular(
-                          16,
-                        ))),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(16),
+                    topRight: Radius.circular(
+                      16,
+                    ),
+                  ),
+                ),
                 context: context,
                 builder: (context) => Container(
                   decoration: const BoxDecoration(
@@ -67,7 +70,9 @@ class CustomColumnBody extends StatelessWidget {
                         ),
                         CustomPayButton(
                           text: 'Confirm Payment',
-                          onPressed: () {},
+                          onPressed: () {
+                            // Navigator.push(context, MaterialPageRoute(builder: (context) => const ThankYouView(),),);
+                          },
                         ),
                       ],
                     ),
