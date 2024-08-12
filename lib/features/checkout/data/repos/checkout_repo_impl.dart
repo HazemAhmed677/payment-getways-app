@@ -6,12 +6,16 @@ import 'package:payment_getways_app/features/checkout/data/repos/checkout_repo.d
 
 class CheckoutRepoImpl extends CheckoutRepo {
   @override
-  Future<Either<FailureService, void>> makePayment(
-      {required PaymentIntentInputModel paymentIntentInputModel}) async {
+  Future<Either<FailureService, void>> makePayment({
+    required PaymentIntentInputModel paymentIntentInputModel,
+  }) async {
     try {
-      await StripeService()
-          .makePayment(paymentIntentInputModel: paymentIntentInputModel);
-      return right(null);
+      await StripeService().makePayment(
+        paymentIntentInputModel: paymentIntentInputModel,
+      );
+      return right(
+        null,
+      );
     } catch (e) {
       return left(
         FailureService(
