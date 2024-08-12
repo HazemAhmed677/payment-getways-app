@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:payment_getways_app/core/utils/app_images.dart';
-import 'package:payment_getways_app/features/checkout/presentation/views/thank_you_view.dart';
 import 'package:payment_getways_app/features/checkout/presentation/views/widgets/all_items.dart';
 import 'package:payment_getways_app/features/checkout/presentation/views/widgets/all_payment_methods.dart';
 import 'package:payment_getways_app/features/checkout/presentation/views/widgets/custom_pay_button.dart';
