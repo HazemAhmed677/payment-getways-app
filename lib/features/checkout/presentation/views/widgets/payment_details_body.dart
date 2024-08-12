@@ -4,6 +4,8 @@ import 'package:payment_getways_app/features/checkout/presentation/views/widgets
 import 'package:payment_getways_app/features/checkout/presentation/views/widgets/custom_credit_card_with_form.dart';
 import 'package:payment_getways_app/features/checkout/presentation/views/widgets/custom_pay_button.dart';
 
+import '../../../../../core/utils/app_styles.dart';
+
 class PaymentDetailsBody extends StatefulWidget {
   const PaymentDetailsBody({super.key});
 
@@ -52,7 +54,12 @@ class _PaymentDetailsBodyState extends State<PaymentDetailsBody> {
                 ),
                 Align(
                   child: CustomPayButton(
-                    text: 'Pay',
+                    widget: Text(
+                      'Pay',
+                      style: AppStyles.medium22.copyWith(
+                        color: Colors.black,
+                      ),
+                    ),
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
                         formKey.currentState!.save();

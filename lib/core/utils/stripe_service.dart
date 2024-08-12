@@ -9,10 +9,7 @@ class StripeService {
       PaymentIntentInputModel paymentIntentInputModel) async {
     var response = await ApiService().post(
         url: 'https://api.stripe.com/v1/payment_intents',
-        body: {
-          'amount': paymentIntentInputModel.amount,
-          'currency': paymentIntentInputModel.currency,
-        },
+        body: paymentIntentInputModel.toJson(),
         token: kMyToken);
     PaymentIntentModel paymentIntentModel =
         PaymentIntentModel.fromJson(response.data);

@@ -23,4 +23,10 @@ class StripeCubit extends Cubit<StripeState> {
       ),
     );
   }
+
+  @override
+  void onChange(Change<StripeState> change) {
+    super.onChange(change);
+    print(change);
+  }
 }

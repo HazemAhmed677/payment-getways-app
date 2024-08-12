@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:payment_getways_app/constants.dart';
 import 'package:payment_getways_app/features/checkout/presentation/views/my_cart_view.dart';
 
 void main() {
+  Stripe.publishableKey = kPublishableKey;
   runApp(const PaymentApp());
 }
 
@@ -19,3 +22,7 @@ class PaymentApp extends StatelessWidget {
     );
   }
 }
+
+// PaymentIntentObject createPaymentIntent(amount, currency)
+// initPaymentSheet(paymentIntentClientSecret)
+// present pymentSheet by Stripe.instance

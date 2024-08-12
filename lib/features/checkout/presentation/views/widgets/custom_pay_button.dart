@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:payment_getways_app/core/utils/app_styles.dart';
 
 class CustomPayButton extends StatelessWidget {
-  const CustomPayButton({super.key, this.onPressed, required this.text});
+  const CustomPayButton({super.key, this.onPressed, required this.widget});
   final VoidCallback? onPressed;
-  final String text;
+  final Widget widget;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -24,12 +23,7 @@ class CustomPayButton extends StatelessWidget {
           padding: const EdgeInsets.symmetric(
             vertical: 23.0,
           ),
-          child: Text(
-            text,
-            style: AppStyles.medium22.copyWith(
-              color: Colors.black,
-            ),
-          ),
+          child: widget,
         ),
       ),
     );
