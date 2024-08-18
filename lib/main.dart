@@ -23,6 +23,13 @@ class PaymentApp extends StatelessWidget {
   }
 }
 
-// PaymentIntentObject createPaymentIntent(amount, currency)
-// initPaymentSheet(paymentIntentClientSecret)
-// present pymentSheet by Stripe.instance
+// Traditional pattern 
+// PaymentIntentModel createPaymentIntent(amount, currency) 
+// initPaymetnSheet(SetupPaymentSheetParameters parameters)
+// presentPaymentSheet()
+// ----------------------------------------------------------------------------
+// For saving a card pattern 
+// PaymentIntentModel  createPaymentIntent(amount, currency, customerId)
+// keySecret  createEhemralKey(stripeVersion, customerId)
+// initPaymetnSheet(merchantDisplayName, intentClientSecret, ephemeralkey)
+// presentPaymentSheet()

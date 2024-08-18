@@ -16,7 +16,7 @@ class StripeCubit extends Cubit<StripeState> {
         paymentIntentInputModel: paymentIntentInputModel);
     result.fold(
       (left) => emit(
-        StripeFailure(errorMsg: left.errorMsg),
+        StripeFailure(errorMsg: 'Payment Cancelled'),
       ),
       (right) => emit(
         StripeSuccess(),
